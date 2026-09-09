@@ -1,7 +1,7 @@
 {
   "manifest_version": 3,
   "name": "ConnectedIn - LinkedIn Auto-Connect",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Automatically click Connect buttons on LinkedIn recommendations. Smart delays to avoid rate-limiting.",
   "permissions": [
     "activeTab",
@@ -13,11 +13,27 @@
   ],
   "action": {
     "default_popup": "popup.html",
-    "default_title": "ConnectedIn - Auto-Connect on LinkedIn"
+    "default_title": "ConnectedIn - Auto-Connect on LinkedIn",
+    "default_icon": {
+      "16": "images/icon-16.png",
+      "48": "images/icon-48.png",
+      "128": "images/icon-128.png"
+    }
   },
   "icons": {
     "16": "images/icon-16.png",
     "48": "images/icon-48.png",
     "128": "images/icon-128.png"
-  }
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "https://www.linkedin.com/*"
+      ],
+      "js": [
+        "content.js"
+      ],
+      "run_at": "document_idle"
+    }
+  ]
 }

@@ -2,6 +2,11 @@ let isRunning = false;
 let clickCount = 0;
 
 chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
+  if (request.action === "ping") {
+    sendResponse({status: "ready"});
+    return;
+  }
+
   if (request.action === "startClicking") {
     if (isRunning) {
       sendResponse({status: "already_running", count: clickCount});
