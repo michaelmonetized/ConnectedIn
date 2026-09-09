@@ -78,7 +78,7 @@ ConnectedIn/
 ├── popup.js              # Popup controls and stats
 ├── content.js            # Auto-clicker logic (runs on LinkedIn)
 ├── README.md             # This file
-└── images/               # Extension icons (optional)
+└── images/               # Extension icons
     ├── icon-16.png
     ├── icon-48.png
     └── icon-128.png
